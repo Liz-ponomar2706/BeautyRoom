@@ -15,17 +15,28 @@ namespace BeautyRoom
         public Form1()
         {
             InitializeComponent();
+            mainWindow = new MainWindow();
         }
-
-        private void gunaAdvenceButton1_Click(object sender, EventArgs e)
-        {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-        }
-
+        MainWindow mainWindow;
+        
+        string User = "Мария";
+        string PhoneNumber = "89012345678";
+        string Password = "123456";
         private void gunaButton1_Click(object sender, EventArgs e)
         {
+            string UserName = gunaTextBox1.Text;
+            string Number = gunaTextBox2.Text;
+            string Pas = gunaTextBox3.Text;
+            if (UserName == User && Number == PhoneNumber && Pas == Password)
+            {
+                mainWindow.Show();
+            }
+            else
+            {
+                MessageBox.Show("Ошибка в логине или пароле.Попробуйте снова!","Ошибка авторизации");
 
+            }
         }
+
     }
 }
